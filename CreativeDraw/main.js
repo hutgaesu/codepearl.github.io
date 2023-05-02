@@ -184,7 +184,7 @@ function preprocess(imgData)
 async function start(cur_mode)
 {
     mode = cur_mode
-    const model = await tf.loadLayersModel('model/model.json')
+    const model = await tf.loadLayersModel('https://foo.bar/tfjs_artifacts/model/model.json')
     model.predict(tf.zeros([1, 28, 28, 1])) 
     allowDrawing()
     await loadDict()
