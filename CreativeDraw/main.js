@@ -55,30 +55,24 @@ function recordCoor(event)
     }
 }
 
-function getMinBox()
-{
-    var coorX = coords.map(function(p)
-    {
+function getMinBox() {
+    var coorX = coords.map(function(p) {
         return p.x
     });
-    var coorY = coords.map(function(p)
-    {
+    var coorY = coords.map(function(p) {
         return p.y
     });
 
-    var min_coords =
-    {
+    var min_coords = {
         x: Math.min.apply(null, coorX),
         y: Math.min.apply(null, coorY)
     }
-    var max_coords =
-    {
+    var max_coords = {
         x: Math.max.apply(null, coorX),
         y: Math.max.apply(null, coorY)
     }
 
-    return
-    {
+    return {
         min: min_coords,
         max: max_coords
     }
@@ -190,7 +184,7 @@ function preprocess(imgData)
 async function start(cur_mode)
 {
     mode = cur_mode
-    model = await tf.loadLayersModel('model/model.json')
+    const model = await tf.loadLayersModel('model/model.json')
     model.predict(tf.zeros([1, 28, 28, 1])) 
     allowDrawing()
     await loadDict()
