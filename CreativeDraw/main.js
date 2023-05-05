@@ -97,7 +97,7 @@ function getFrame()
         const imgData = getImageData()
 
         //모델 예측하기
-        const pred = model.predict(preprocess(imgData)).dataSync()
+        const pred = await model.predict(preprocess(imgData)).dataSync()
 
         const indices = findIndicesOfMax(pred, 5)
         const probs = findTopValues(pred, 5)
