@@ -188,6 +188,7 @@ async function start(cur_mode)
     model.predict(tf.zeros([1, 28, 28, 1])) 
     allowDrawing()
     await loadDict()
+    console.log(model.summary());
 }
 
 function allowDrawing()
