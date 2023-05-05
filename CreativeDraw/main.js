@@ -96,6 +96,8 @@ function getFrame()
         //canvas에서 이미지 데이터 가져오기
         const imgData = getImageData()
 
+        console.log("getFrame()");
+        console.log(model.summary());
         //모델 예측하기
         const pred = model.predict(preprocess(imgData)).dataSync()
 
